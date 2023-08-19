@@ -84,7 +84,7 @@ console.log(home);
                   secHeading={false}
                 />
               ))}
-            </ul>
+            </ul>: { id: any; title: { rendered: any; }; excerpt: { rendered: any; }; }
           </section>
           <Hr />
         </>
@@ -98,9 +98,9 @@ console.log(home);
 
 
       
-      entradas.map((post) => (
-      <a href={`/posts/${post.id}`} >  
-         <h3  class="text-lg text-orange font-medium decoration-dashed hover:underline" set:html={post.title.rendered} />
+      entradas.map((post:any) => (
+      <a href={`/${post.slug}`} >  
+         <h3  class="text-lg font-medium decoration-dashed hover:underline" set:html={post.title.rendered} />
       </a>
       <p set:html={post.excerpt.rendered} />
       <br />
